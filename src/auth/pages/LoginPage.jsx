@@ -8,10 +8,12 @@ const LoginPage = () => {
   const { login } = useContext( AuthContext )
   
   const handleLogin = () => {
+
+    const lastPath = localStorage.getItem('lastPath') || '/marvel'
     
     login( 'Fernanda velásquez' )
     
-    navegate('/marvel', {
+    navegate(lastPath, {
       replace: true
     })
   }
